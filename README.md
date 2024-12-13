@@ -136,4 +136,5 @@
     parser.add_argument("--data", type=str, default=ROOT / "data/tml.yaml", help="dataset.yaml path")
     parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "runs/train/exp8/weights/best.pt", help="model path(s)")
 
-注意对应参数的更改,然后执行python val.py
+注意对应参数的更改,比如"runs/train/exp8/weights/best.pt",这里要改成训练完成的对应的文件夹下面的best.pt,路径参考上面的例子,例如运行了6次实验后最佳模型保存在runs/train/exp6/weights/
+,然后执行python val.py
