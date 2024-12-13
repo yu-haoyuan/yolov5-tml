@@ -7,6 +7,10 @@
 
 ##### 1.原论文与数据的获取
 
+首先git clone这个仓库
+
+    git clone https://github.com/yu-haoyuan/yolov5-tml
+
 这是原论文的地址,请通过湖大登录获得ieee的文章获取权限
 
     https://ieeexplore.ieee.org/document/9991806
