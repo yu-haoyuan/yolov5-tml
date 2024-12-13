@@ -133,8 +133,22 @@
 找到文件下的val.py文件,这里和训练同理进行偷懒
 这里运用的是训练好的模型进行推理
 
+
     parser.add_argument("--data", type=str, default=ROOT / "data/tml.yaml", help="dataset.yaml path")
     parser.add_argument("--weights", nargs="+", type=str, default=ROOT / "runs/train/exp8/weights/best.pt", help="model path(s)")
 
 注意对应参数的更改,比如"runs/train/exp8/weights/best.pt",这里要改成训练完成的对应的文件夹下面的best.pt,路径参考上面的例子,例如运行了6次实验后最佳模型保存在runs/train/exp6/weights/
 ,然后执行python val.py
+
+
+##### 6.可选 可视化部署
+
+部署可视化
+利用损失函数实时查看训练进程
+直接在terminal里面 pip install wandb即可
+[WeTab 新标签页 (wandb.ai)](https://wandb.ai/)
+它会提示你在terminal里面登录 
+这里输入密码有点幽默
+[wand安装登录方法，以及输入API key时不显示、无法粘贴、粘贴密码个数不对等问题解决_SF199853的博客-CSDN博客]
+(https://blog.csdn.net/SF199853/article/details/132723055?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-132723055-blog-131901698.235%5Ev38%5Epc_relevant_anti_t3&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-132723055-blog-131901698.235%5Ev38%5Epc_relevant_anti_t3&utm_relevant_index=2)\
+参考这篇文章 解决问题
