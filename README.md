@@ -64,6 +64,7 @@
           └── val
 
 然后将文件夹tmldata移动到如下位置
+
     yolov5-tml
       ├── data
            ├── tmldata
@@ -78,6 +79,7 @@
 
 
 然后我们准备.yaml配置文件,这里由于内容比较长直接在对应位置配置好了,建议了解一下这部分是如何工作的
+
     yolov5-tml
       ├── data
       │   ├── tml.yaml
