@@ -23,10 +23,17 @@
     点击下载
 
     下载之后你会看到这种格式
-    ```
+    
     furnas_dataset_v0.07
       ├── .ipynb_checkpoints
       ├── data
+      |   ├──coco
+      |   ├──csv
+      |   |──xml
+      |   |──yolo
+      |   │   ├── test
+      │   │   ├── train
+      │   │   └── val
       ├── imgs
       │   ├── test
       │   ├── train
@@ -34,7 +41,18 @@
       ├── output
       └── utils
 
-    ```
+    将imgs和data中的yolo文件复制到一个新文件夹中,新文件夹由你命名,我的为tmlData
+    tmlData
+      ├── images
+      │   ├── test
+      │   ├── train
+      │   └── val
+      └── labels
+          ├── test
+          ├── train
+          └── val
+          
+    
 
 
 ## 安装
