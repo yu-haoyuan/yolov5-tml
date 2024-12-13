@@ -1,0 +1,21 @@
+# Train and validation paths
+train: data/tmldata/images/train  # 训练集图像路径
+val: data/tmldata/images/val      # 验证集图像路径
+test: data/tmldata/images/test     # 验证集图像路径
+
+# Number of classes
+nc: 11  # Number of classes (0-9 as listed)
+
+# Class names
+names:
+  0: baliser_ok
+  1: baliser_aok
+  2: baliser_nok
+  3: insulator_ok
+  4: insulator_nok
+  5: bird_nest
+  6: stockbridge_ok
+  7: none
+  8: separator_ok
+  9: separator_nok
+  10: insulator_uok
