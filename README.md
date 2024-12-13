@@ -8,11 +8,13 @@
 ##### 1.原论文与数据的获取
 
 这是原论文的地址,请通过湖大登录获得ieee的文章获取权限
-  https://ieeexplore.ieee.org/document/9991806
+
+    https://ieeexplore.ieee.org/document/9991806
 
 
 这是原仓库的地址,用于开源数据集的获取
-  https://github.com/freds0/PTL-AI_Furnas_Dataset
+
+    https://github.com/freds0/PTL-AI_Furnas_Dataset
 
 
 ##### 2.数据集的准备
@@ -24,30 +26,32 @@
 
 下载之后你会看到这种格式
 
-  furnas_dataset_v0.07
-    ├── .ipynb_checkpoints
-    ├── data
-    |   ├──coco
-    |   ├──csv
-    |   |──xml
-    |   |──yolo
-    |   │   ├── test
-    │   │   ├── train
-    │   │   └── val
-    ├── imgs
-    │   ├── test
-    │   ├── train
-    │   └── val
-    ├── output
-    └── utils
+    furnas_dataset_v0.07
+      ├── .ipynb_checkpoints
+      ├── data
+      |   ├──coco
+      |   ├──csv
+      |   |──xml
+      |   |──yolo
+      |   │   ├── test
+      │   │   ├── train
+      │   │   └── val
+      ├── imgs
+      │   ├── test
+      │   ├── train
+      │   └── val
+      ├── output
+      └── utils
+
 将imgs和data中的yolo文件复制到一个新文件夹中,新文件夹由你命名,我的为tmlData
-  tmlData
-    ├── images
-    │   ├── test
-    │   ├── train
-    │   └── val
-    └── labels
-        ├── test
-        ├── train
-        └── val
+
+    tmlData
+      ├── images
+      │   ├── test
+      │   ├── train
+      │   └── val
+      └── labels
+          ├── test
+          ├── train
+          └── val
           
