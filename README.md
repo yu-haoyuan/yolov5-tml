@@ -34,7 +34,7 @@
 在第1步中提到的原仓库中找到Download PTL-AI Furnas Dataset here.
 点击下载
 
-下载之后你会看到这种格式
+下载之后你会看到这种数据集文件夹**长得像**这样,但是我们只用关心打了注释的两个部分:
 
     furnas_dataset_v0.07
       ├── .ipynb_checkpoints
@@ -42,20 +42,24 @@
       |   ├──coco
       |   ├──csv
       |   |──xml
-      |   |──yolo
+      |   |──yolo//这里存放的是下面对应的labels
       |   │   ├── test
       │   │   ├── train
       │   │   
-      ├── imgs
+      ├── imgs//这里存放的是下面对应的images
       │   ├── test
       │   ├── train
       │   
       ├── output
       └── utils
 
-由于这里没用val文件无法适应yolo的格式,这里提供了一个简单的脚本datafix.py来提供val集,可以自行设置路径完成val文件的生成,生成之后将val文件加入到如下步骤
+下载完毕之后,你可以在随意的地方新建一个文件夹来专门处理数据,这里可以搜一下yolov5数据集的放置格式,这里网上博客很多
 
-将imgs和data中的yolo文件以及自行生成的val文件复制移动到一个新文件夹中,新文件夹由你命名,我的为tmldata
+如果你大概了解了yolo的数据集是如何摆放的,接下来处理val文件
+
+由于这里没用val文件无法适应yolo的格式,这里提供了一个简单的脚本datafix.py来提供val集,可以自行设置路径完成val文件的生成,你可以把datafix.py移动到刚才提到的新建的文件夹之中,进行dataset的处理,生成之后将val文件加入到如下步骤
+
+将上面文件中的**imgs**和data中的yolo文件对应的**labels部分**以及自行生成的**val文件夹**复制移动到一个新文件夹中,新文件夹由你命名,我的为tmldata
 
     tmldata
       ├── images
@@ -67,7 +71,7 @@
           ├── train
           └── val
 
-然后将文件夹tmldata移动到如下位置
+然后将文件夹tmldata移动到tml-data库中如下位置
 
     yolov5-tml
       ├── data
@@ -92,6 +96,10 @@
 
 ##### 4.yolov5对应parser命令行的更改
 
+为了执行训练与推理代码,我们需要对库中的**train.py**和**val.py**进行更改
+
+对于train.py:
+
 这里为了方便,直接对源文件中的parser中的参数进行更改,这里正确的用法应该是在命令行中运行的过程时执行,我更改的部分为
 
     parser.add_argument("--cfg", type=str, default="models/yolov5s.yaml", help="model.yaml path")
@@ -103,10 +111,7 @@
 --cfg为采用预训练模型,这里我们可以到yolov5的源库中进行下载
     https://github.com/ultralytics/yolov5
 这里根据自己显卡配置选择模型,参数越大效果越好(可能)
-这里我下载的是yolov5s模型,下载完成后将yolov5s.pt放置在
-    yolov5-tml
-      ├── yolov5s.pt
-即为和train.py同级的文件夹下
+但是这里在之前执行detect.py的时候,已经帮你自动下载好了yolov5s.pt,这一块可以忽略
 
 --data为文件参数的路径,改为我们设置的data/tml.yaml
 --epochs为训练轮数,这里采用默认值100
@@ -122,6 +127,8 @@
 点开最后一个exp,你会发现weightd中有best.pt,这就是你训练好的模型
 
 ##### 5.训练完毕后进行推理
+
+对于val.py:
 
 找到文件下的val.py文件,这里和训练同理进行偷懒
 这里运用的是你训练好的模型进行推理
